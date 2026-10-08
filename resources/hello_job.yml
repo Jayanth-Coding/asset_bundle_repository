@@ -1,0 +1,10 @@
+resources:
+  jobs:
+    hello_job:
+      name: hello_job_${bundle.target}
+      tasks:
+        - task_key: say_hello
+          notebook_task:
+            notebook_path: ../src/hello.py
+            base_parameters:
+              greeting: ${var.greeting}

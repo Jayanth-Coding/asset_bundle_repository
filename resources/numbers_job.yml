@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    numbers_job:
+      name: numbers_job_${bundle.target}
+      tasks:
+        - task_key: make_data
+          notebook_task:
+            notebook_path: ../src/step1_make_data.py
+
+        - task_key: use_data
+          depends_on:
+            - task_key: make_data
+          notebook_task:
+            notebook_path: ../src/step2_use_data.py
+
+      schedule:
+        quartz_cron_expression: "0 0 6 * * ?"
+        timezone_id: Asia/Kolkata

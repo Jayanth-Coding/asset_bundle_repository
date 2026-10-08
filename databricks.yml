@@ -1,0 +1,24 @@
+bundle:
+  name: hello_bundle
+
+include:
+  - resources/*.yml
+
+variables:
+  greeting:
+    description: The message the notebook prints
+    default: Hello From DAB bundle
+
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-7405617990940940.0.azuredatabricks.net
+
+  test:
+    workspace:
+      host: https://adb-7405617990940940.0.azuredatabricks.net
+    variables:
+      greeting: Hello from TEST
