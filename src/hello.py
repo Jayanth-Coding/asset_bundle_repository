@@ -1,5 +1,5 @@
 # Databricks notebook source
-print("Hello from my first bundle!")
+print("Hello from my Github to Databricks deployment practice!")
 
 # Databricks notebook source
 dbutils.widgets.text("greeting", "no greeting given")
